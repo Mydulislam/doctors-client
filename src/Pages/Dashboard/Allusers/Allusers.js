@@ -5,12 +5,12 @@ import toast from 'react-hot-toast';
 const Allusers = () => {
     const { data: allusers = [], refetch } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch('http://localhost:5000/users')
+        queryFn: () => fetch('https://doctor-server-gilt.vercel.app/users')
             .then(res => res.json())
     })
 
     const handleUpdate = (id)=>{
-        fetch(`http://localhost:5000/users/admin/${id}`,{
+        fetch(`https://doctor-server-gilt.vercel.app/users/admin/${id}`,{
             method : 'PUT',
             headers:{
                 authorization: `bearer ${localStorage.getItem('access-token')}`

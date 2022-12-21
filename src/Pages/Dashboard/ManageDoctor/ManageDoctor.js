@@ -13,7 +13,7 @@ const ManageDoctor = () => {
     
     const { data: doctors = [], isLoading, refetch } = useQuery({
         queryKey: ['doctors'],
-        queryFn: () => fetch('http://localhost:5000/doctors', {
+        queryFn: () => fetch('https://doctor-server-gilt.vercel.app/doctors', {
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`
             }
@@ -22,7 +22,7 @@ const ManageDoctor = () => {
     })
 
     const handleDelete= (doctor)=>{
-        fetch(`http://localhost:5000/doctors/${doctor._id}`, {
+        fetch(`https://doctor-server-gilt.vercel.app/doctors/${doctor._id}`, {
             method:'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`

@@ -7,7 +7,7 @@ import Loading from '../../../Shared/Loading/Loading';
 const MyAppoint = () => {
     // je email diye login kora ace tar appointment list dekhabe table akare
     const {user} = useContext(AuthContext)
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://doctor-server-gilt.vercel.app/bookings?email=${user?.email}`;
 
     const {data:bookings=[], isLoading} = useQuery({
         queryKey:['bookings', user?.email],

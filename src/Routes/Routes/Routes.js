@@ -61,7 +61,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/dashboard/payment/:id',
-                loader:({params})=> fetch(`http://localhost:5000/payment/${params.id}`),
+                loader:({params})=> fetch(`https://doctor-server-gilt.vercel.app/payment/${params.id}`),
                 element:<AdminRoute><Payment></Payment></AdminRoute>
             },
         ]

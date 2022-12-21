@@ -12,7 +12,7 @@ const AddDoctors = () => {
 
     const { data: specialties = [], isLoading } = useQuery({
         queryKey: ['specialty'],
-        queryFn: () => fetch('http://localhost:5000/appointspecialty')
+        queryFn: () => fetch('https://doctor-server-gilt.vercel.app/appointspecialty')
             .then(res => res.json())
     })
     const handleAddDoctor = (data) => {
@@ -36,7 +36,7 @@ const AddDoctors = () => {
                         image: imgData.data.url
                     }
                     // doctors ke insert kora
-                    fetch('http://localhost:5000/doctors', {
+                    fetch('https://doctor-server-gilt.vercel.app/doctors', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
